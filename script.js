@@ -29,18 +29,36 @@ function show() {
 
 show();
 
-    gsap.to("#bottle", {
-      rotate: 0,
-      x: -100,  
-      scrollTrigger: {
-        trigger: "#bottle",
-        scroller: "#main",
-        start: "top 5%",
-        end: "top -402%",
-        scrub: true,
-        pin: true,
-      },
-    });
+gsap.matchMedia().add("(min-width: 1200px)", () => {
+  gsap.to("#bottle", {
+    rotate: 0,
+    x: -100,  
+    scrollTrigger: {
+      trigger: "#bottle",
+      scroller: "#main",
+      start: "top 5%",
+      end: "top -400%",
+      scrub: true,
+      pin: true,
+    },
+  });
+});
+
+gsap.matchMedia().add("(min-width: 1920px)", () => {
+  gsap.to("#bottle", {
+    rotate: 0,
+    x: -220,  
+    scrollTrigger: {
+      trigger: "#bottle",
+      scroller: "#main",
+      start: "top 5%",
+      end: "top -400%",
+      scrub: true,
+      pin: true,
+    },
+  });
+});
+
 
     gsap.to("#bottle", {
       scale: 0.5,
